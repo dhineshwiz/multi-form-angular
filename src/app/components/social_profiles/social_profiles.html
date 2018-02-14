@@ -1,0 +1,40 @@
+<md-card flex="60" ng-controller="SocailProfileCtrl as ctrl">
+  <md-card-title>
+    SOCIAL PROFILES
+  </md-card-title>
+  <md-card-content>
+    <form name="AccountSetup">
+      <md-input-container>
+        <label>Twitter</label>
+        <input type="string" name="Twitter" ng-model="ctrl.PersonalInfo.twitter" id="twitter" />
+        <div ng-messages="AccountSetup.Twitter.$error">
+          <div ng-message="required">
+            Please Enter your twitter account
+          </div>
+        </div>
+      </md-input-container>
+      <md-input-container>
+        <label>Facebook</label>
+        <input type="string" name="Facebook" ng-model="ctrl.PersonalInfo.facebook" id="facebook" />
+        <div ng-messages="AccountSetup.Twitter.$error">
+          <div ng-message="required">
+            Please Enter your facebook account
+          </div>
+        </div>
+      </md-input-container>
+      <md-input-container>
+        <label>Google Plus</label>
+        <input type="string" name="Google Plus" ng-model="ctrl.PersonalInfo.google_plus" id="google_plus" />
+        <div ng-messages="AccountSetup.Twitter.$error">
+          <div ng-message="required">
+            Please Enter your google plus account
+          </div>
+        </div>
+      </md-input-container>
+    </form>
+  </md-card-content>
+  <md-card-actions layout="row" layout-align="end center">
+    <md-button class="md-primary" ng-click="ctrl.previous()">Previous</md-button>
+    <md-button class="md-primary" ng-click="ctrl.next()">Next</md-button>
+  </md-card-actions>
+</md-card>

@@ -1,0 +1,26 @@
+<md-card flex="60" ng-controller="AccountSetupCtrl as ctrl">
+  <md-card-title>
+    Account Setup
+  </md-card-title>
+  <md-card-content>
+    <form name="AccountSetup">
+      <div layout="coloumn" layout-align="center center" layout-wrap>
+        <md-input-container flex="100">
+          <label>Email</label>
+          <input type="email" ng-model="ctrl.AccountSetup.email" name="email" id="email" />
+        </md-input-container>
+        <md-input-container flex="100">
+          <label>Password</label>
+          <input type="password" ng-model="ctrl.AccountSetup.password" name="password" id="password" />
+        </md-input-container>
+        <md-input-container flex="100">
+          <label>Confirm Password</label>
+          <input type="password" ng-model="ctrl.AccountSetup.confirm_password" name="confirm password" id="confirm_password" />
+        </md-input-container>
+      </div>
+    </form>
+  </md-card-content>
+  <md-card-actions layout="row" layout-align="end center">
+    <md-button class="md-primary" ng-click="ctrl.next()">Next</md-button>
+  </md-card-actions>
+</md-card>

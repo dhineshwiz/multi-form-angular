@@ -1,0 +1,111 @@
+<!doctype html>
+<html class="no-js" ng-app="multiPageForm">
+
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <title>Operational panel</title>
+  <meta name="description" content="panel for operations">
+  <meta name="author" content="greedygame.com">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- run `gulp wiredep` to automaticaly populate bower styles dependencies -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css({.tmp/serve,src}) styles/app.css -->
+  <!-- inject:css -->
+  <!-- css files will be automaticaly insert here -->
+  <!-- endinject -->
+  <!-- endbuild -->
+  <style type="text/css">
+  .slide {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .slide.ng-enter,
+  .slide.ng-leave {
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+
+  .slide.ng-enter {
+    left: 100%;
+  }
+
+  .slide.ng-enter-active {
+    left: 0;
+  }
+
+  .slide.ng-leave {
+    left: 0;
+  }
+
+  .slide.ng-leave-active {
+    left: -100%;
+  }
+  </style>
+</head>
+
+<body ng-cloak>
+  <!--[if lt IE 10]>
+      <p>You are using an <strong>outdated</strong> browser. Please
+        <a href="http://browsehappy.com/">upgrade your browser</a>
+        to improve your experience.</p>
+    <![endif]-->
+  <!-- <div ui-view layout="row" layout-fill></div>-->
+  <div layout="row" layout-fill data-ng-controller="MainController">
+    <div layout="column" tabIndex="-1" role="main" flex>
+      <md-toolbar ng-hide="isLogin" class="md-whiteframe-glow-z1 site-content-toolbar">
+        <div class="md-toolbar-tools docs-toolbar-tools" tabIndex="-1">
+          <md-button class="md-icon-button" ng-click="ctrl.toggleItemsList()" hide-gt-sm aria-label="Toggle Menu">
+            <md-icon md-svg-src="assets/icons/ic_menu_24px.svg"></md-icon>
+          </md-button>
+          <div layout="row" flex class="fill-height">
+            <h2 class="md-toolbar-item md-breadcrumb md-headline">
+             <span>Multi Page Form</span>
+            </h2>
+          </div>
+        </div>
+      </md-toolbar>
+      <md-content flex="100" class="md-padding page-content" layout="row" layout-align="center center">
+        <div ng-view class="slide"></div>
+      </md-content>
+    </div>
+  </div>
+  <!--js beautify library start -->
+  <script src="https://cdn.rawgit.com/beautify-web/js-beautify/v1.6.8/js/lib/beautify.js"></script>
+  <script src="https://cdn.rawgit.com/beautify-web/js-beautify/v1.6.8/js/lib/beautify-css.js"></script>
+  <script src="https://cdn.rawgit.com/beautify-web/js-beautify/v1.6.8/js/lib/beautify-html.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.5.1/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/yamljs/0.2.9/yaml.js"></script>
+  <!--js beautify library end-->
+  <!-- build:js(src) scripts/vendor.js -->
+  <!-- bower:js -->
+  <!-- run `gulp wiredep` to automaticaly populate bower script dependencies -->
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!--script>
+  Raven
+    .config('https://e84ebbca13d54007841d5d2f9f139651@sentry.io/135944')
+    .addPlugin(Raven.Plugins.Angular,angular)
+    .install();
+</script-->
+  <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
+  <!-- inject:js -->
+  <!-- js files will be automaticaly insert here -->
+  <!-- endinject -->
+  <!-- inject:partials -->
+  <!-- angular templates will be automatically converted in js and inserted here -->
+  <!-- endinject -->
+  <!-- endbuild -->
+</body>
+
+</html>

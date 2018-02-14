@@ -1,0 +1,24 @@
+<md-card flex="60" ng-controller="PersonalInfo as ctrl">
+  <md-card-title>
+    Personal Details
+  </md-card-title>
+  <md-card-content>
+    <form name="AccountSetup">
+      <md-input-container>
+        <label>First Name</label>
+        <input type="text" name="firstName" ng-model="ctrl.PersonalInfo.firstName" id="firstName" />
+      </md-input-container>
+      <md-input-container>
+        <label>Last Name</label>
+        <input type="text" name="lastName" ng-model="ctrl.PersonalInfo.lastName" id="lastName" />
+      </md-input-container>
+      <md-input-container>
+        <label>Phone Number</label>
+        <input type="number" name="phoneNumber" ng-model="ctrl.PersonalInfo.phone" id="phone_number" />
+      </md-input-container>
+    </form>
+  </md-card-content>
+  <md-card-actions layout="row" layout-align="end center">
+    <md-button class="md-primary" ng-click="ctrl.previous()">Previous</md-button>
+  </md-card-actions>
+</md-card>
